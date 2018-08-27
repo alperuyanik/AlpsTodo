@@ -14,10 +14,14 @@ class ToDoListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-   
         
+        if let items = UserDefaults.standard.array(forKey: "AlpListArray") as? [String] {
+            itemArray = items
+        }
         
     }
+    
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -67,6 +71,9 @@ class ToDoListViewController: UITableViewController {
             print("message is : " + String(myString.text!))
             if let newItem = myString.text {
                 self.itemArray.append(newItem)
+                
+                 UserDefaults.standard.set(self.itemArray, forKey: "AlpListArray")
+                
                 self.tableView.reloadData()
             }
             
