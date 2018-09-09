@@ -14,9 +14,11 @@
 		4488DA442134091800AC682E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4488DA422134091800AC682E /* Main.storyboard */; };
 		4488DA462134091A00AC682E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4488DA452134091A00AC682E /* Assets.xcassets */; };
 		4488DA492134091A00AC682E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4488DA472134091A00AC682E /* LaunchScreen.storyboard */; };
+		797137DF2C21CB77CCC650BB /* Pods_AlpsTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2BED6A52CEB1726C95EB75 /* Pods_AlpsTodo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F2BED6A52CEB1726C95EB75 /* Pods_AlpsTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlpsTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		442D6D4B213DD77D000273E7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		4440A4DB21452E3500218854 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		4488DA3B2134091800AC682E /* AlpsTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlpsTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +28,8 @@
 		4488DA452134091A00AC682E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4488DA482134091A00AC682E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4488DA4A2134091A00AC682E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E9913CFF4989D163AA67EF9 /* Pods-AlpsTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlpsTodo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlpsTodo/Pods-AlpsTodo.release.xcconfig"; sourceTree = "<group>"; };
+		E5479DA33A2885B280A2B047 /* Pods-AlpsTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlpsTodo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AlpsTodo/Pods-AlpsTodo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				797137DF2C21CB77CCC650BB /* Pods_AlpsTodo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				4488DA3D2134091800AC682E /* AlpsTodo */,
 				4488DA3C2134091800AC682E /* Products */,
+				9F52A0E0813144F853AB9891 /* Pods */,
+				C2DC217E14F98B342382802A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +109,23 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9F52A0E0813144F853AB9891 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5479DA33A2885B280A2B047 /* Pods-AlpsTodo.debug.xcconfig */,
+				7E9913CFF4989D163AA67EF9 /* Pods-AlpsTodo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C2DC217E14F98B342382802A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F2BED6A52CEB1726C95EB75 /* Pods_AlpsTodo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4488DA4D2134091A00AC682E /* Build configuration list for PBXNativeTarget "AlpsTodo" */;
 			buildPhases = (
+				FED5964154707BB9A59D5AAC /* [CP] Check Pods Manifest.lock */,
 				4488DA372134091800AC682E /* Sources */,
 				4488DA382134091800AC682E /* Frameworks */,
 				4488DA392134091800AC682E /* Resources */,
+				7AD15F18D5BFEB1F7EEFD981 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,6 +193,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7AD15F18D5BFEB1F7EEFD981 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AlpsTodo/Pods-AlpsTodo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AlpsTodo/Pods-AlpsTodo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FED5964154707BB9A59D5AAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AlpsTodo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4488DA372134091800AC682E /* Sources */ = {
@@ -318,6 +385,7 @@
 		};
 		4488DA4E2134091A00AC682E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5479DA33A2885B280A2B047 /* Pods-AlpsTodo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -336,6 +404,7 @@
 		};
 		4488DA4F2134091A00AC682E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E9913CFF4989D163AA67EF9 /* Pods-AlpsTodo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
