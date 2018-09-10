@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		442D6D4C213DD77D000273E7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 442D6D4A213DD77D000273E7 /* DataModel.xcdatamodeld */; };
 		4440A4DC21452E3500218854 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A4DB21452E3500218854 /* CategoryTableViewController.swift */; };
+		4440A4E021455C2B00218854 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A4DF21455C2B00218854 /* Item.swift */; };
+		4440A4E221455C3C00218854 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4440A4E121455C3C00218854 /* Category.swift */; };
 		4488DA3F2134091800AC682E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4488DA3E2134091800AC682E /* AppDelegate.swift */; };
 		4488DA412134091800AC682E /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4488DA402134091800AC682E /* ToDoListViewController.swift */; };
 		4488DA442134091800AC682E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4488DA422134091800AC682E /* Main.storyboard */; };
@@ -19,8 +20,9 @@
 
 /* Begin PBXFileReference section */
 		3F2BED6A52CEB1726C95EB75 /* Pods_AlpsTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlpsTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		442D6D4B213DD77D000273E7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		4440A4DB21452E3500218854 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		4440A4DF21455C2B00218854 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		4440A4E121455C3C00218854 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4488DA3B2134091800AC682E /* AlpsTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlpsTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4488DA3E2134091800AC682E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4488DA402134091800AC682E /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +80,8 @@
 		4488DA5221348A3100AC682E /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				442D6D4A213DD77D000273E7 /* DataModel.xcdatamodeld */,
+				4440A4DF21455C2B00218854 /* Item.swift */,
+				4440A4E121455C3C00218854 /* Category.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -240,10 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4440A4E021455C2B00218854 /* Item.swift in Sources */,
 				4488DA412134091800AC682E /* ToDoListViewController.swift in Sources */,
-				442D6D4C213DD77D000273E7 /* DataModel.xcdatamodeld in Sources */,
 				4488DA3F2134091800AC682E /* AppDelegate.swift in Sources */,
 				4440A4DC21452E3500218854 /* CategoryTableViewController.swift in Sources */,
+				4440A4E221455C3C00218854 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,19 +447,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		442D6D4A213DD77D000273E7 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				442D6D4B213DD77D000273E7 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = 442D6D4B213DD77D000273E7 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4488DA332134091800AC682E /* Project object */;
 }

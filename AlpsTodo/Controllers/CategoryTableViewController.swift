@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class CategoryTableViewController: UITableViewController {
     
-    var categories = [Category]()
-
+    let realm = try! Realm()
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var categories: Results<Category>? //which is a collection of results
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +27,13 @@ class CategoryTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
-        let item = categories[indexPath.row]
-        
-        cell.textLabel?.text = item.name
+        cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories added yet"
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categories.count
+        return categories?.count ?? 1
     }
     
     //tablelView üstündeki bir satıra tıklayınca ne olacağını buraya yazarız
@@ -54,17 +51,19 @@ class CategoryTableViewController: UITableViewController {
         
         if let indexPath = tableView.indexPathForSelectedRow {
             
-            destinationVC.selectedCategory = categories[indexPath.row]
+            destinationVC.selectedCategory = categories?[indexPath.row]
         }
         
     }
     
     //MARK: - Data Manupulation Methods
     
-    func saveItem() {
+    func save(category: Category) {
         
         do {
-            try context.save()
+            try realm.write {
+                realm.add(category)
+            }
             
         } catch {
             print("Error saving context \(error)")
@@ -73,16 +72,10 @@ class CategoryTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func loadItems(with request: NSFetchRequest<Category> = Category.fetchRequest()) {
+    func loadItems() {
         
-        // let request : NSFetchRequest<Item> = Item.fetchRequest()
-        
-        do {
-            categories = try context.fetch(request)
-        } catch {
-            print("Error fetching data form context \(error)")
-        }
-        
+       categories = realm.objects(Category.self)  // fetching
+
         tableView.reloadData()
     }
     
@@ -98,12 +91,10 @@ class CategoryTableViewController: UITableViewController {
             
             //what will happen when the user clics the Add item add button on our UIAlert
             
-            let newItem = Category(context: self.context)
-            newItem.name = textField.text!
+            let newCategory = Category()
+            newCategory.name = textField.text!
            
-            self.categories.append(newItem)
-            
-            self.saveItem()
+            self.save(category: newCategory)
             
         }
         
@@ -118,13 +109,5 @@ class CategoryTableViewController: UITableViewController {
         
         present(alert, animated: true, completion: nil)
     }
-    
-    //MARK: - Table View Data source methods
-    
-    
-    //MARK: - TableView Delegete methods
-    
-    
-    //MARK: - Data Manupulation Methods
     
 }
